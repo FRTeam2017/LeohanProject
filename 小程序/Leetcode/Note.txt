@@ -1,0 +1,74 @@
+void primaryTypeToList()
+{
+	list<int> lst;
+	lst.push_back(1);
+	lst.push_back(2);
+	lst.push_back(3);
+	lst.push_back(4);
+	lst.push_back(5);
+	lst.push_back(6);
+	for (list<int>::iterator it = lst.begin();it != lst.end(); it++)
+	{
+		cout << *it << " ";
+	}
+}
+void printAllPath(int start, int end, int node_count,list<Edge> * graph);
+void storeEdge()
+{
+	list<Edge> ledge;
+	Edge edge;
+	edge.source = 1;
+	edge.dest = 2;
+	edge.weight = 1;
+	ledge.push_back(edge);
+	edge.source = 2;
+	edge.dest = 3;
+	edge.weight = 2;
+	ledge.push_back(edge);
+	edge.source = 3;
+	edge.dest = 2;
+	edge.weight = 3;
+	ledge.push_back(edge);
+	for (list<Edge>::iterator it = ledge.begin(); it != ledge.end(); it++)
+	{
+		cout << (*it).source << " -->" << (*it).dest << " weight is " << (*it).weight << endl;
+	}
+}
+/*
+	这样的输入是正确的
+*/
+void standardInput()
+{
+	int sample;
+	//为每一个点分配一个边的列表
+	//边的数目代表要存的边的次数
+	int node_count;
+	int edge_count;
+	cin >> sample;
+	while (sample != 0)
+	{
+		cin >> node_count;
+		cin >> edge_count;
+		int source, destination;
+		float weight;
+		int search_start, search_end;
+		list<Edge> *lst = new list<Edge>[node_count];
+		Edge edge;
+		while (edge_count != 0)
+		{
+			cin >> source;
+			cin >> destination;
+			cin >> weight;
+			edge.source = source - 1;
+			edge.dest = destination - 1;
+			edge.weight = weight;
+			lst[source - 1].push_back(edge);
+			edge_count--;
+		}
+		cin >> search_start;
+		cin >> search_end;
+		//开始搜素
+		printAllPath(search_start, search_end,node_count,lst);
+		sample--;
+	}
+}

@@ -1,0 +1,4 @@
+OpenMP是C++提供的扩展类库，它允许在指令集上提供并行编程的能力
+Visual Studio中配置OpenML
+1.创建一个Console工程
+2.选择创建的工程，鼠标右键属性，在language下面的OpenMP support 中选择yes.
