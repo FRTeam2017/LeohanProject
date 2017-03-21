@@ -1,0 +1,64 @@
+public class FindPath {
+    public static void main(String[] args) {
+        String path = "/home/hanliyao/Documents/lfw";
+        File file = new File(path);
+        String[] lists = file.list();
+        int count = 1;
+        for(String list : lists)
+        {
+            String file_path = path+"/"+list;
+            file = new File(file_path);
+            String[] file_lists = file.list();
+            for(String file_list : file_lists)
+            {
+                System.out.println(file_path+"/"+file_list+","+count);
+
+            }
+            count++;
+        }
+    }
+
+
+    /**
+     * path = "/home/hanliyao/Documents/lfw";
+     * @param path
+     */
+    public static void count_file(String path)
+    {
+        File file = new File(path);
+        String[] lists = file.list();
+        int count = 1;
+        for(String list : lists)
+        {
+            String file_path = path+"/"+list;
+            file = new File(file_path);
+            String[] file_lists = file.list();
+            for(String file_list : file_lists)
+            {
+                System.out.println(file_path+"/"+file_list);
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+
+    /**
+     *  path = "/home/hanliyao/Documents/lfw";
+     * @param path
+     */
+    public static void find_file_in_directory(String path)
+    {
+        File file = new File(path);
+        String[] lists = file.list();
+        for(String list : lists)
+        {
+            String file_path = path+"/"+list;
+            file = new File(file_path);
+            String[] file_lists = file.list();
+            for(String file_list : file_lists)
+            {
+                System.out.println(file_path+"/"+file_list);
+            }
+        }
+    }
+}

@@ -1,0 +1,3 @@
+--convert RGB2Tensor
+local img1 = image.load("/home/hanliyao/Documents/lfw/Jeffrey_Katzenberg/Jeffrey_Katzenberg_0001.jpg",3,"byte");
+local x = torch.reshape(img1,187500):type('torch.DoubleTensor')
