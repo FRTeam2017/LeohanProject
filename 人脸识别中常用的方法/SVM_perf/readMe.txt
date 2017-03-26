@@ -1,0 +1,2 @@
+SVM^{perf}用来做多变量性能表现的支持向量机
+	SVMperf is an implementation of the Support Vector Machine (SVM) formulation for optimizing multivariate performance measures described in [Joachims, 2005]. Furthermore, SVMperf implements the alternative structural formulation of the SVM optimization problem for conventional binary classification with error rate and ordinal regression described in [Joachims, 2006]. So, there are three reasons for why you might want to use SVMperf instead of SVMlight
